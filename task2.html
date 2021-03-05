@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>What Can JavaScript Do?</h2>
+
+<p>JavaScript can change HTML attribute values.</p>
+
+<p id="demo"></p>
+
+<script>
+    var frist = new Date(2021,2,0)
+    var answer = 0;
+    var second = new Date(2021,3,30);
+    if (frist != null && second != null) {
+        var startDate = new Date(frist);
+        var endDate = new Date(second);
+        var totalfriday = new Array(7) ;
+        var j=0;
+        var k = 0;
+        var temp = 0;
+
+
+             for (var i = startDate; i <= endDate; i.setTime(i.getTime() + 1000 * 60 * 60 * 24)) {
+                for(j=0; j<7; j++){
+                    temp=0;
+                    for(k=0; k<31; k++){
+                        
+                        if (i.getDay() ==j && i.getDate()==k) {
+                            document.write(j+","+k+"<br>");
+                            temp++;
+                        }
+                    }
+                    totalfriday[j]=temp;
+                }
+            }
+    } else {
+        totalfriday = 0;
+        document.getElementById('demo').value = totalfriday;
+    }
+    
+document.getElementById("demo").innerHTML = totalfriday;
+
+</script>
+
+
+
+<script> 
+
+// Create one dimensional array 
+	var gfg = new Array(31); 
+
+document.write("Creating 2D array <br>"); 
+
+// Loop to create 2D array using 1D array 
+for (var i = 0; i < gfg.length; i++) { 
+	gfg[i] = new Array(7); 
+} 
+
+var h = 0; 
+
+// Loop to initilize 2D array elements. 
+for (var i = 0; i < 31; i++) { 
+	for (var j = 0; j < 7; j++) { 
+		gfg[i][j] = h++; 
+	} 
+    h=0;
+} 
+
+// Loop to display the elements of 2D array. 
+for (var i = 0; i < 31; i++) { 
+	for (var j = 0; j < 7; j++) { 
+		document.write(gfg[i][j] + " "); 
+	} 
+	document.write("<br>"); 
+} 
+</script>	
+

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <title>Preview</title>
+
+    <style>
+        .container {
+        max-width: 700px;
+        margin: 80px auto;
+        padding: 50px;
+        box-shadow: 0px 0px 8px 1px #c1c1c1;
+        border-radius: 8px;
+        position: relative;
+        }
+        .dropdown {
+        display: block !important;
+        width: 100% !important;
+        }
+        .btn-light {
+        color: #212529;
+        background-color: white;
+        border-color: #ced4da;
+        }
+        .custom-control {
+        display: inline-block !important;
+        }
+        .toggle-off {
+        white-space: nowrap;
+        }
+        .form-group {
+        margin-bottom: 1.3rem;
+        }
+        .custom-control {
+        margin-right: 15px;
+        }
+        .header {
+        position: absolute;
+        width: 100%;
+        height: 70px;
+        background-color: #007bff!important;
+        top: 0;
+        left: 0;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        }
+        .main {
+        padding-top: 50px;
+        }
+        .header h1 {
+        text-align: center;
+        color: white;
+        padding: 10px 0px;
+        }
+        .btn-success:not(:disabled):not(.disabled).active, .btn-success:not(:disabled):not(.disabled):active, .show>.btn-success.dropdown-toggle {
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+        }
+        .btn-info, .btn-success,  .btn-success:hover {
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+        }
+        .center-align {
+        text-align: center;
+        }
+        .image-preview{
+            width: 200px;
+            min-height: 200px;
+            border: 2px solid #dddddd;
+            margin-top: 15px;
+        }
+
+        p.ex1 {
+            margin-left: 200px;
+        }
+
+        .col-25 {
+            float: left;
+            width: 40%;
+            }
+
+            .col-75 {
+            float: left;
+            width: 60%;
+            }
+    </style>
+
+
+ </head>
+ <body>
+
+<div class="container">
+    <div class="header">
+      <h1>View Book</h1>
+    </div>
+    <div class="main">
+
+            <div class="form-row">
+                <div class="col-25">
+                    <label for="bookName" id="bookName">Book Name </label>
+                </div>
+
+                <div class="col-75">
+                <p id="book"></p>
+            </div>
+            </div> 
+
+            <div class="form-row">
+                <div class="col-25">
+                    <label for="authorEmail">Author Email</label>
+                </div>
+                <div class="col-75">
+                <p id="authorEmail"></p>
+            </div>
+            </div> 
+
+            <div class="form-row">
+                <div class="col-25">
+                <label for="website">Website</label>
+            </div>
+            <div class="col-75">
+
+                <p id="website"></p>
+            </div>
+            </div> 
+
+        
+            <div class="form-row">
+                <div class="col-25">
+
+                <label style="display: block" class="my-1 mr-2" for="inlineFormCustomSelectPref">Cover Picture</label>
+                </div>
+                <div class="col-75">
+
+                <div class="image-preview">
+                    <img src="" id="cover" alt="Cover Image" width="200px" height="200px">
+                </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-25">
+                <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Categories</label>
+                </div>
+                <div class="col-75">
+                <p id="categories"></p>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-25">
+
+                <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Date Of Publication</label>
+                </div>
+                <div class="col-75">
+                <p  id="date"></p>
+            </div>
+            </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-25">
+
+                <label for="website">ISBN Number</label>
+                </div>
+                <div class="col-75">
+
+                <p id="ISBN"></p>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-25">
+
+                <label for="website">Price  (&#8377)</label>
+                </div>
+                <div class="col-75">
+
+                <p id="price"></p>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-25">
+
+                <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Type</label>
+                </div>
+                <div class="col-75">
+
+                <p id="type"></p>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-25">
+
+                <label style="display: block" class="my-1 mr-2" for="inlineFormCustomSelectPref">Format</label>
+                </div>
+                <div class="col-75">
+
+                <p id="format"></p>
+                </div>
+            </div>
+        
+
+            <div class="form-row">
+                <div class="col-25">
+
+                <label style="display: block" class="my-1 mr-2" for="inlineFormCustomSelectPref">In Stock</label>
+                </div>
+                <div class="col-75">
+
+                <p id="available"></p>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-25">
+
+                <label style="display: block" class="my-1 mr-2" for="inlineFormCustomSelectPref">Rating</label>
+                </div>
+                <div class="col-75">
+
+                <p id="rating"></p>
+                </div>
+            </div>
+
+
+            <div class="form-row">
+                <div class="col-25">
+
+                <label for="comment">Review</label>
+                </div>
+                <div class="col-75">
+
+                <p id="comment"></p>
+                </div>
+            </div>
+
+            <div class="center-align">
+              <button type="submit" onclick="val()" class="btn btn-primary" formtarget="_self">Submit</button>
+              <button type="button" class="btn btn-danger">Cancel</button>
+            </div>
+
+    </div>
+</div>
+
+
+<script>
+
+
+    document.getElementById("book").innerHTML = ":  " +localStorage.getItem("book_name");
+    document.getElementById("authorEmail").innerHTML = ":  " +localStorage.getItem("authorEmail");
+    document.getElementById("website").innerHTML = ":  " +localStorage.getItem("website");
+
+    document.getElementById("categories").innerHTML = ":  " +localStorage.getItem("categories");
+    document.getElementById("date").innerHTML = ":  " +localStorage.getItem("date");
+    document.getElementById("ISBN").innerHTML = ":  " +localStorage.getItem("ISBN");
+
+    document.getElementById("price").innerHTML = ":  " +localStorage.getItem("Price");
+    document.getElementById("type").innerHTML = ":  " +localStorage.getItem("pref");
+    document.getElementById("format").innerHTML = ":  " +localStorage.getItem("format");
+
+    document.getElementById("available").innerHTML = ":  " +localStorage.getItem("available");
+    document.getElementById("rating").innerHTML = ":  " +localStorage.getItem("rating") + "/5";
+    document.getElementById("comment").innerHTML = ":  " +localStorage.getItem("comment");
+
+     const coverImage = document.getElementById("cover");
+     coverImage.setAttribute("src", "oneplus_8pro.jpg")
+    // if(coverImage){
+    //     document.querySelector("#cover").setAttribute("src", coverImage);
+    // }
+
+
+</script>
+
+</body>
+</html>
